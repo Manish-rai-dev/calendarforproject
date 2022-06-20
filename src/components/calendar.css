@@ -1,0 +1,10 @@
+.tablecalendar
+{
+    background-color: bisque;
+    width: 100%;
+}
+.headers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

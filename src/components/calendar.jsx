@@ -4,7 +4,7 @@ import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
 import { scheduleData } from '../data/dummy';
 import  Header  from './Header';
-
+import "../components/calendar.css";
 // eslint-disable-next-line react/destructuring-assignment
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
@@ -22,12 +22,12 @@ const Scheduler = () => {
   };
 
   return (
-    <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="App" title="Calendar" />
-      <ScheduleComponent
+    <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl ">
+      <Header category="" title="Calendar"  />
+      <ScheduleComponent  
         height="650px"
         ref={(schedule) => setScheduleObj(schedule)}
-        selectedDate={new Date(2021, 0, 10)}
+        selectedDate={new Date()}
         eventSettings={{ dataSource: scheduleData }}
         dragStart={onDragStart}
       >
@@ -37,14 +37,14 @@ const Scheduler = () => {
         <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]} />
       </ScheduleComponent>
       <PropertyPane>
-        <table
+        <table 
           style={{ width: '100%', background: 'white' }}
         >
-          <tbody>
+          <tbody className=''>
             <tr style={{ height: '50px' }}>
               <td style={{ width: '100%' }}>
                 <DatePickerComponent
-                  value={new Date(2021, 0, 10)}
+                  value={new Date()}
                   showClearButton={false}
                   placeholder="Current Date"
                   floatLabelType="Always"
